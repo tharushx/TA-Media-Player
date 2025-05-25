@@ -163,22 +163,12 @@ mvn javafx:run -Djavafx.args="--enable-preview"
 ### 🌙 Dark Theme Experience
 > *Cinematic viewing with reduced eye strain*
 
-![Dark Theme Preview](https://placehold.co/600x400/1a1a1a/ffffff?text=Dark+Theme+Preview)
+![Dark Theme Preview](ui/dark-theme-preview.png)
 
 ### ☀️ Light Theme Experience  
 > *Clean, professional interface for all environments*
 
-![Light Theme Preview](https://placehold.co/600x400/f5f5f5/333333?text=Light+Theme+Preview)
-
-### 🎵 Audio Equalizer
-> *Professional-grade audio tuning*
-
-![Equalizer Interface](https://placehold.co/600x300/2d3748/ffffff?text=10-Band+Equalizer)
-
-### 📋 Playlist Management
-> *Organize your media library efficiently*
-
-![Playlist Interface](https://placehold.co/600x350/4a5568/ffffff?text=Smart+Playlist+Manager)
+![Light Theme Preview](ui/light-theme-preview.png)
 
 </div>
 
