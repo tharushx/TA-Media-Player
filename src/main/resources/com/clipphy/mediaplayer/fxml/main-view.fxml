@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane fx:id="mainPane" prefHeight="600.0" prefWidth="800.0" styleClass="background" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clipphy.mediaplayer.MainController">
+   <top>
+      <HBox alignment="CENTER_LEFT" styleClass="header-bar">
+         <children>
+            <Label styleClass="app-title" text="">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0">
+                     <image>
+                        <Image url="@../images/logoicon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+
+
+            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="themeToggleButton" mnemonicParsing="false" onAction="#handleThemeToggle" styleClass="theme-toggle-button">
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <Label fx:id="themeIcon" styleClass="theme-icon" text="☀" />
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#handleMinimizeButton" styleClass="window-control" text="_">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="maximizeButton" mnemonicParsing="false" onAction="#handleMaximizeButton" styleClass="window-control" text="□">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#handleExitButton" styleClass="window-control, close-button" text="X" />
+               </children>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <BorderPane>
+         <center>
+            <StackPane fx:id="mediaPane" styleClass="media-pane">
+               <children>
+                  <MediaView fx:id="mediaView" fitHeight="400.0" fitWidth="600.0" preserveRatio="true" />
+                  <VBox alignment="BOTTOM_CENTER" StackPane.alignment="BOTTOM_CENTER">
+                     <children>
+                        <Label fx:id="subtitleLabel" alignment="CENTER" styleClass="subtitle-text" text="" wrapText="true">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+         </center>
+         <bottom>
+            <VBox fx:id="controlBar" styleClass="control-bar">
+               <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label fx:id="currentTimeLabel" styleClass="time-label" text="00:00">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Slider fx:id="timeSlider" HBox.hgrow="ALWAYS" styleClass="time-slider" id="timeSlider" />
+                        <Label fx:id="totalTimeLabel" styleClass="time-label" text="00:00">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Button fx:id="previousButton" mnemonicParsing="false" onAction="#handlePreviousButton" styleClass="control-button" text="⏮">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="playButton" mnemonicParsing="false" onAction="#handlePlayButton" styleClass="control-button" text="▶">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="pauseButton" mnemonicParsing="false" onAction="#handlePauseButton" styleClass="control-button" text="⏸" visible="false">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="stopButton" mnemonicParsing="false" onAction="#handleStopButton" styleClass="control-button" text="⏹">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="nextButton" mnemonicParsing="false" onAction="#handleNextButton" styleClass="control-button" text="⏭">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Separator orientation="VERTICAL" />
+                        <Button fx:id="muteButton" mnemonicParsing="false" onAction="#handleMuteButton" styleClass="control-button" text="Mute" />
+                        <Slider fx:id="volumeSlider" prefWidth="100.0" />
+                        <Separator orientation="VERTICAL" />
+
+                        <Button mnemonicParsing="false" onAction="#handleOpenFile" styleClass="control-button, responsive-button" fx:id="openFileButton">
+                            <graphic>
+                                <HBox fx:id="openFileContent" alignment="CENTER" spacing="2">
+                                    <ImageView fx:id="openFileIcon" fitWidth="16" fitHeight="16" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/black/folder-black.png" />
+                                        </image>
+                                    </ImageView>
+                                    <Label styleClass="button-text" text="Open File" />
+                                </HBox>
+                            </graphic>
+                        </Button>
+                        <ToggleButton fx:id="playlistToggle" mnemonicParsing="false" styleClass="control-button, responsive-button">
+                            <graphic>
+                                <HBox fx:id="playlistContent" alignment="CENTER" spacing="2">
+                                    <ImageView fx:id="playlistIcon" fitWidth="16" fitHeight="16" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/black/playlist-black.png" />
+                                        </image>
+                                    </ImageView>
+                                    <Label styleClass="button-text" text="Playlist" />
+                                </HBox>
+                            </graphic>
+                        </ToggleButton>
+                        <Separator orientation="VERTICAL" />
+                        <Button mnemonicParsing="false" onAction="#handleLoadSubtitle" styleClass="control-button, responsive-button" fx:id="subtitleButton">
+                            <graphic>
+                                <HBox fx:id="subtitleContent" alignment="CENTER" spacing="2">
+                                    <ImageView fx:id="subtitleIcon" fitWidth="16" fitHeight="16" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/black/subtitle-black.png" />
+                                        </image>
+                                    </ImageView>
+                                    <Label styleClass="button-text" text="Subtitle" />
+                                </HBox>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="fullscreenButton" id="fullscreenButton" mnemonicParsing="false" onAction="#handleFullscreenButton" styleClass="control-button, responsive-button">
+                            <graphic>
+                                <HBox fx:id="fullscreenContent" alignment="CENTER" spacing="2">
+                                    <ImageView fx:id="fullscreenIcon" fitWidth="16" fitHeight="16" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/black/fullscreen-black.png" />
+                                        </image>
+                                    </ImageView>
+
+                                </HBox>
+                            </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleAboutButton" styleClass="control-button, responsive-button" fx:id="aboutButton">
+                            <graphic>
+                                <HBox fx:id="aboutContent" alignment="CENTER" spacing="2">
+                                    <ImageView fx:id="aboutIcon" fitWidth="16" fitHeight="16" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/black/info-black.png" />
+                                        </image>
+                                    </ImageView>
+                                    <Label styleClass="button-text" text="About" />
+                                </HBox>
+                            </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleSettingsButton" styleClass="control-button, responsive-button" fx:id="settingsButton">
+                            <graphic>
+                                <HBox fx:id="settingsContent" alignment="CENTER" spacing="2">
+                                    <ImageView fx:id="settingsIcon" fitWidth="16" fitHeight="16" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/black/settings-black.png" />
+                                        </image>
+                                    </ImageView>
+                                    <Label styleClass="button-text" text="Settings" />
+                                </HBox>
+                            </graphic>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </bottom>
+      </BorderPane>
+   </center>
+   <right>
+      <VBox fx:id="playlistPanel" prefWidth="300.0" styleClass="sidebar" visible="true" BorderPane.alignment="CENTER">
+         <children>
+            <Label styleClass="sidebar-header" text="Playlist">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ListView fx:id="playlistView" onMouseClicked="#handlePlaylistItemClicked" prefHeight="300.0" VBox.vgrow="ALWAYS" />
+            <HBox alignment="CENTER" spacing="5.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleRemoveFromPlaylist" styleClass="control-button" text="Remove" />
+                  <Button mnemonicParsing="false" onAction="#handleClearPlaylist" styleClass="control-button" text="Clear All" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <TabPane fx:id="settingsTabPane" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Equalizer">
+                  <content>
+                    <VBox spacing="5.0">
+                         <children>
+                            <Label text="Preset:" />
+                            <ComboBox fx:id="equalizerPresetComboBox" prefWidth="150.0" />
+                         </children>
+                         <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                         </padding>
+                    </VBox>
+                  </content>
+                </Tab>
+                <Tab text="Settings">
+                  <content>
+                    <VBox spacing="5.0">
+                         <children>
+                            <Label text="Theme:" />
+                            <HBox spacing="10.0">
+                               <children>
+                                  <RadioButton fx:id="systemThemeRadio" mnemonicParsing="false" selected="true" text="System">
+                                     <toggleGroup>
+                                        <ToggleGroup fx:id="themeToggleGroup" />
+                                     </toggleGroup>
+                                  </RadioButton>
+                                  <RadioButton fx:id="darkThemeRadio" mnemonicParsing="false" text="Dark" toggleGroup="$themeToggleGroup" />
+                                  <RadioButton fx:id="lightThemeRadio" mnemonicParsing="false" text="Light" toggleGroup="$themeToggleGroup" />
+                               </children>
+                            </HBox>
+                            <Label text="Playback Speed:">
+                               <VBox.margin>
+                                  <Insets top="10.0" />
+                               </VBox.margin>
+                            </Label>
+                            <Slider fx:id="playbackSpeedSlider" blockIncrement="0.25" majorTickUnit="0.5" max="2.0" min="0.5" minorTickCount="1" showTickLabels="true" showTickMarks="true" value="1.0" />
+                         </children>
+                         <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                         </padding>
+                    </VBox>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </right>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" styleClass="status-bar">
+         <children>
+            <Label fx:id="mediaInfoLabel" text="No media loaded">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+            <Separator orientation="VERTICAL">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Separator>
+            <Label fx:id="statusLabel" text="Ready" />
+         </children>
+         <padding>
+            <Insets bottom="3.0" top="3.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane> 

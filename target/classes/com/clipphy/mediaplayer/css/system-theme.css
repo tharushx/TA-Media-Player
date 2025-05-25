@@ -1,0 +1,364 @@
+/* System Theme CSS - Automatically adapts to the user's system theme */
+.root {
+    /* Use these properties to check system theme */
+    -fx-base: -fx-system-base-color;
+    -fx-background: -fx-system-bg-color;
+    -fx-control-inner-background: -fx-system-bg-color;
+    -fx-text-fill: -fx-system-text-color;
+}
+
+/* Main App Background */
+.background {
+    -fx-background-color: -fx-background;
+}
+
+/* Header Bar Styling */
+.header-bar {
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-base, 20%), derive(-fx-base, 10%));
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 0);
+}
+
+.app-title {
+    -fx-text-fill: -fx-text-fill;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 30px;
+    -fx-padding: 5px;
+    -fx-cursor: hand;
+}
+
+.theme-toggle-button:hover {
+    -fx-background-color: rgba(128, 128, 128, 0.1);
+}
+
+.theme-icon {
+    -fx-font-size: 16px;
+    -fx-text-fill: -fx-text-fill;
+}
+
+/* Window Control Buttons */
+.window-control {
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-text-fill;
+    -fx-background-radius: 3;
+    -fx-font-weight: bold;
+    -fx-min-width: 25px;
+    -fx-min-height: 25px;
+}
+
+.window-control:hover {
+    -fx-background-color: rgba(128, 128, 128, 0.1);
+}
+
+.close-button:hover {
+    -fx-background-color: #e81123;
+    -fx-text-fill: white;
+}
+
+/* Media Pane Styling */
+.media-pane {
+    -fx-background-color: derive(-fx-base, -10%);
+}
+
+/* Subtitle Styling */
+.subtitle-text {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, black, 2, 0.6, 0, 0);
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-background-radius: 5;
+    -fx-padding: 5;
+}
+
+/* Control Bar Styling */
+.control-bar {
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-base, 20%), derive(-fx-base, 10%));
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 0);
+    -fx-opacity: 1.0;
+    -fx-transition: opacity 0.3s ease;
+}
+
+.control-bar.hidden {
+    -fx-opacity: 0.0;
+}
+
+.control-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-text-fill;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+    -fx-cursor: hand;
+    -fx-transition: background-color 0.2s ease;
+}
+
+.control-button:hover {
+    -fx-background-color: rgba(128, 128, 128, 0.1);
+}
+
+.control-button:pressed {
+    -fx-background-color: rgba(128, 128, 128, 0.2);
+}
+
+/* Fullscreen button special styling */
+#fullscreenButton {
+    -fx-padding: 5 10 5 10;
+}
+
+#fullscreenButton:hover {
+    -fx-background-color: rgba(0, 120, 215, 0.7);
+    -fx-text-fill: white;
+}
+
+/* Logo Styling */
+.app-logo {
+    -fx-opacity: 0.8;
+}
+
+.app-logo:hover {
+    -fx-opacity: 1.0;
+}
+
+/* Slider Styling */
+.slider .track {
+    -fx-background-color: derive(-fx-base, -5%);
+}
+
+.slider .thumb {
+    -fx-background-color: #0078d7;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.slider .thumb:hover {
+    -fx-background-color: #0091ea;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 3, 0, 0, 0);
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: -fx-text-fill;
+}
+
+.time-label {
+    -fx-font-family: "Consolas";
+    -fx-font-size: 12px;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    -fx-background-color: derive(-fx-base, 5%);
+    -fx-border-width: 0 0 0 1;
+    -fx-border-color: derive(-fx-base, -10%);
+    -fx-transition: -fx-translate-x 0.3s ease;
+}
+
+.sidebar-header {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 0 5 0;
+}
+
+/* ListView Styling */
+.list-view {
+    -fx-background-color: -fx-control-inner-background;
+    -fx-background-radius: 4;
+    -fx-control-inner-background: -fx-control-inner-background;
+}
+
+.list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-text-fill;
+    -fx-padding: 5 8 5 8;
+}
+
+.list-view .list-cell:filled:selected, .list-view .list-cell:filled:selected:focused {
+    -fx-background-color: #0078d7;
+    -fx-text-fill: white;
+}
+
+.list-view .list-cell:filled:hover {
+    -fx-background-color: derive(-fx-base, 10%);
+}
+
+/* Fullscreen Overlay */
+.fullscreen-overlay {
+    -fx-background-color: transparent;
+    -fx-transition: opacity 0.3s ease;
+}
+
+/* Tab Pane Styling */
+.tab-pane {
+    -fx-background-color: transparent;
+    -fx-tab-min-width: 80px;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: derive(-fx-base, 5%);
+}
+
+.tab-pane .tab {
+    -fx-background-color: derive(-fx-base, -5%);
+    -fx-background-radius: 4 4 0 0;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: derive(-fx-base, 15%);
+}
+
+.tab-pane .tab .tab-label {
+    -fx-text-fill: -fx-text-fill;
+    -fx-font-weight: normal;
+}
+
+/* Status Bar Styling */
+.status-bar {
+    -fx-background-color: derive(-fx-base, 5%);
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: derive(-fx-base, -10%);
+}
+
+/* ComboBox styling */
+.combo-box {
+    -fx-background-color: derive(-fx-base, 10%);
+    -fx-text-fill: -fx-text-fill;
+    -fx-background-radius: 4;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-text-fill;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box .arrow {
+    -fx-background-color: -fx-text-fill;
+}
+
+/* Radio Button Styling */
+.radio-button {
+    -fx-text-fill: -fx-text-fill;
+}
+
+.radio-button .radio {
+    -fx-background-color: derive(-fx-base, 10%);
+    -fx-border-color: derive(-fx-base, -10%);
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.radio-button:selected .radio .dot {
+    -fx-background-color: #0078d7;
+}
+
+/* Toggle Button Styling */
+.toggle-button {
+    -fx-background-color: derive(-fx-base, 10%);
+    -fx-text-fill: -fx-text-fill;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+
+.toggle-button:selected {
+    -fx-background-color: #0078d7;
+    -fx-text-fill: white;
+}
+
+/* About Dialog Styling */
+.about-dialog {
+    -fx-background-color: -fx-background;
+}
+
+.about-title {
+    -fx-text-fill: white;
+}
+
+.about-button {
+    -fx-background-color: #113939;
+    -fx-text-fill: white;
+    -fx-background-radius: 4;
+    -fx-min-width: 80px;
+}
+
+.about-button:hover {
+    -fx-background-color: #0C4242;
+}
+
+/* Glass-like elements with transparency */
+.glass-effect {
+    -fx-background-color: rgba(128, 128, 128, 0.2);
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 8, 0, 0, 0);
+}
+
+/* Transition Animations */
+* {
+    -fx-transition: -fx-background-color 0.2s ease;
+}
+
+/* Responsive Button Styling */
+.responsive-button {
+    -fx-padding: 5 10 5 10;
+    -fx-transition: all 150ms ease-out;
+}
+
+.button-icon {
+    -fx-font-family: "Segoe UI Emoji", "Noto Color Emoji", "Arial Unicode MS", sans-serif; /* Fallback fonts */
+    -fx-font-size: 16px;
+    -fx-text-fill: -fx-text-fill;
+    -fx-transition: -fx-font-size 150ms ease-out;
+    -fx-cursor: hand;
+}
+
+.button-icon:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(128, 128, 128, 0.3), 5, 0, 0, 0);
+}
+
+.button-text {
+    -fx-font-size: 12px;
+    -fx-transition: all 150ms ease-out;
+}
+
+/* Window width-dependent responsive styling */
+.root.window-small .button-text {
+    -fx-opacity: 0;
+    -fx-max-width: 0;
+    -fx-padding: 0;
+    -fx-font-size: 0;
+}
+
+.root.window-small .button-icon {
+    -fx-font-family: "Segoe UI Emoji", "Noto Color Emoji", "Arial Unicode MS", sans-serif;
+    -fx-font-size: 18px;
+    -fx-text-fill: -fx-text-fill;
+}
+
+.root.window-small .responsive-button {
+    -fx-padding: 5 8 5 8;
+}
+
+/* Font Awesome Icon Styling */
+.fa-icon {
+    -fx-cursor: hand;
+    -fx-transition: all 150ms ease-out;
+    -fx-fill: -fx-text-fill;
+}
+
+.fa-icon:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(128, 128, 128, 0.3), 5, 0, 0, 0);
+}
+
+.control-icon {
+    -fx-fill: -fx-text-fill;
+}
+
+/* Window width-dependent Font Awesome responsive styling */
+.root.window-small .fa-icon {
+    -fx-font-size: 18px;
+} 

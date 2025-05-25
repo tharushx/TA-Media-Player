@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" spacing="10.0" styleClass="about-dialog" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clipphy.mediaplayer.AboutController">
+   <children>
+      <Label styleClass="about-title" text="TA Media Player">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Separator prefWidth="200.0">
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </Separator>
+      <HBox alignment="CENTER" spacing="20.0">
+         <children>
+            <ImageView fx:id="logoImageView" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+            <VBox spacing="5.0">
+               <children>
+                  <Label text="Developer Name: Tharusha Adithya">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+
+                  <Label text="Email: tharushadithya10@gmail.com">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+
+                  <Label fx:id="versionLabel" text="Version: 1.0.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Developed in 2025">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </HBox>
+      <Label text="Built with assistance from Claude 3.7 Sonnet">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </Label>
+      <Label text="© 2025 All rights reserved">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="closeButton" mnemonicParsing="false" onAction="#handleCloseButton" styleClass="about-button" text="Close">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox> 
