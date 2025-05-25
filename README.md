@@ -233,7 +233,7 @@ Ready to code? Follow our guidelines:
 
 
 ```
-Copyright (c) 2025 TA Media Player Team
+Copyright (c) 2025 Tharusha Adithya
 ```
 
 
